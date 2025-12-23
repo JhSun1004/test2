@@ -19,8 +19,9 @@ public class Main {
 			int result = a + b;
 			// Apply nerf factor if set
 			if (nerfFactor < 1.0) {
+				int originalResult = result;
 				result = (int) (result * nerfFactor);
-				logger.log(Level.INFO, "Nerfed result from {0} to {1} with factor {2}", new Object[]{a + b, result, nerfFactor});
+				logger.log(Level.INFO, "Nerfed result from {0} to {1} with factor {2}", new Object[]{originalResult, result, nerfFactor});
 			}
 			logger.log(Level.INFO, "Successfully added {0} and {1} to get {2}", new Object[]{a, b, result});
 			return result;
